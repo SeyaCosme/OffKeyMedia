@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div class="header">
+<div class="header fade-up">
   <h1>OFFKEY MEDIA</h1>
   <p>Flo and his Camera</p>
 </div>
@@ -16,19 +16,21 @@
   <div class="key" onclick="go('why.html')">Why Off-Key</div>
   <div class="key" onclick="go('media.html')">Media</div>
 
- <div class="key red" onclick="go('index.html')">Home</div>
+  <div class="key red" onclick="go('index.html')">Home</div>
 
   <div class="key" onclick="go('pricing.html')">Pricing</div>
   <div class="key" onclick="go('booking.html')">Booking</div>
   <div class="key" onclick="go('productions.html')">Productions</div>
 
-  <!-- black keys -->
-<div class="black-key" style="left: 55px;"></div>
-<div class="black-key" style="left: 135px;"></div>
-<div class="black-key" style="left: 295px;"></div>
-<div class="black-key" style="left: 375px;"></div>
+  <div class="black-key" style="left:55px;"></div>
+  <div class="black-key" style="left:135px;"></div>
+  <div class="black-key" style="left:295px;"></div>
+  <div class="black-key" style="left:375px;"></div>
+
 </div>
 
+<audio id="keySound" src="piano.mp3"></audio>
 <script src="script.js"></script>
+
 </body>
 </html>
