@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Productions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productions | OFFKEY MEDIA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="page-bg" style="background-image: url('productions-bg.jpg');"></div>
-<div class="page-overlay"></div>
+<body class="site-page">
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-link" onclick="go('index.html', event)">Home - Back to Piano</button>
+      <h1 class="page-title">Productions</h1>
+      <span></span>
+    </div>
+  </header>
 
-<div class="mini-nav">
-  <div onclick="go('why.html')">Why</div>
-  <div onclick="go('media.html')">Media</div>
-  <div onclick="go('index.html')">Home</div>
-  <div onclick="go('pricing.html')">Pricing</div>
-  <div onclick="go('booking.html')">Booking</div>
-  <div onclick="go('productions.html')">Productions</div>
-</div>
+  <main class="page-main">
+    <section class="intro">
+      <h2>End-to-End <span class="accent">Production</span></h2>
+      <p>From the first idea to the final edit, OFFKEY MEDIA can help shape the look, sound, and delivery of your project.</p>
+    </section>
 
-<div class="container">
-  <h1 class="fade-up">Productions 🎬</h1>
+    <section class="card-grid">
+      <article class="card">
+        <h3>Cinematic Filmmaking</h3>
+        <p>Short films, music videos, promos, and branded features shot with a clear visual style.</p>
+      </article>
+      <article class="card">
+        <h3>Multi-Cam Coverage</h3>
+        <p>Live events and performances captured from multiple angles for stronger edits.</p>
+      </article>
+      <article class="card">
+        <h3>Clean Audio</h3>
+        <p>Planning for interviews, performances, speeches, and moments where sound matters.</p>
+      </article>
+      <article class="card">
+        <h3>Lighting Design</h3>
+        <p>Natural light, event lighting, or controlled setups to match the mood of the project.</p>
+      </article>
+      <article class="card">
+        <h3>Social Edits</h3>
+        <p>Short vertical clips and promo cuts ready for Instagram, TikTok, YouTube, and reels.</p>
+      </article>
+      <article class="card">
+        <h3>Full Crew Access</h3>
+        <p>Scale the setup for bigger productions when the concept needs more hands and more gear.</p>
+      </article>
+    </section>
 
-  <p class="fade-up">
-    Full creative shoots, edits, and storytelling.
-  </p>
+    <section class="process">
+      <img src="floandhiscam.jpg" alt="OFFKEY MEDIA production artwork">
+      <div class="process-content">
+        <h3>Our Process</h3>
+        <p><span class="accent">Discovery</span> - creative brief and scope. <span class="accent">Pre-production</span> - location, schedule, and shot list. <span class="accent">Production</span> - capture the moment. <span class="accent">Post</span> - edit, color, sound, and deliver.</p>
+      </div>
+    </section>
+  </main>
 
-  <p class="fade-up">
-    From events to cinematic visuals — everything is built to stand out.
-  </p>
-</div>
-
-<audio id="keySound" src="piano.mp3"></audio>
-<script src="script.js"></script>
-
+  <footer class="footer">2026 OFFKEY MEDIA Productions - Capturing Moments in Motion</footer>
+  <audio id="keySound" src="piano.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>

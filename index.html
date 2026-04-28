@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>OffKey Media</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OFFKEY MEDIA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="landing">
+    <div class="title">
+      <h1>OFFKEY <span>MEDIA</span></h1>
+      <p>Press a Key to Begin</p>
+    </div>
 
-<div class="header fade-up">
-  <h1>OFFKEY MEDIA</h1>
-  <p>Flo and his Camera</p>
-</div>
+    <div class="piano-wrap">
+      <div class="piano-top"></div>
+      <div class="piano" aria-label="Main navigation piano">
+        <button class="key" onclick="go('why.html', event)"><span class="key-label">Why</span></button>
+        <button class="key" onclick="go('media.html', event)"><span class="key-label">Media</span></button>
+        <button class="key red" onclick="go('home.html', event)"><span class="key-label">Home</span></button>
+        <button class="key" onclick="go('pricing.html', event)"><span class="key-label">Pricing</span></button>
+        <button class="key" onclick="go('booking.html', event)"><span class="key-label">Booking</span></button>
+        <button class="key" onclick="go('productions.html', event)"><span class="key-label">Productions</span></button>
 
-<div class="keyboard">
+        <div class="black-key one" aria-hidden="true"></div>
+        <div class="black-key two" aria-hidden="true"></div>
+        <div class="black-key three" aria-hidden="true"></div>
+      </div>
+    </div>
 
-  <div class="key" onclick="go('why.html')">Why Off-Key</div>
-  <div class="key" onclick="go('media.html')">Media</div>
+    <p class="tagline">Professional Cinematography - Photography - Event Coverage</p>
+  </main>
 
-  <div class="key red" onclick="go('index.html')">Home</div>
-
-  <div class="key" onclick="go('pricing.html')">Pricing</div>
-  <div class="key" onclick="go('booking.html')">Booking</div>
-  <div class="key" onclick="go('productions.html')">Productions</div>
-
-  <div class="black-key" style="left:55px;"></div>
-  <div class="black-key" style="left:135px;"></div>
-  <div class="black-key" style="left:295px;"></div>
-  <div class="black-key" style="left:375px;"></div>
-
-</div>
-
-<audio id="keySound" src="piano.mp3"></audio>
-<script src="script.js"></script>
-
+  <audio id="keySound" src="piano.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>

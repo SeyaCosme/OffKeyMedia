@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Media</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media | OFFKEY MEDIA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site-page">
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-link" onclick="go('index.html', event)">Home - Back to Piano</button>
+      <h1 class="page-title">Media</h1>
+      <span></span>
+    </div>
+  </header>
 
-<div class="mini-nav">
-  <div onclick="go('why.html')">Why</div>
-  <div onclick="go('media.html')">Media</div>
-  <div onclick="go('index.html')">Home</div>
-  <div onclick="go('pricing.html')">Pricing</div>
-  <div onclick="go('booking.html')">Booking</div>
-  <div onclick="go('productions.html')">Productions</div>
-</div>
+  <main class="page-main">
+    <section class="intro">
+      <h2>Visuals With <span class="accent">Presence</span></h2>
+      <p>A quick look at the OFFKEY MEDIA style: portraits, creative direction, behind-the-scenes moments, and clean image work.</p>
+    </section>
 
-<div class="container">
-  <h1 class="fade-up">Media 🎬</h1>
+    <section class="media-grid">
+      <article class="media-item tall">
+        <img src="floandhiscam.jpg" alt="Flo and his camera artwork">
+        <div class="media-caption">
+          <h3>Flo and His Cam</h3>
+          <p>Artwork and brand identity for OFFKEY MEDIA.</p>
+        </div>
+      </article>
+      <article class="media-item tall">
+        <img src="flostanding.jpg" alt="Flo standing portrait">
+        <div class="media-caption">
+          <h3>Portrait Work</h3>
+          <p>Studio-style portrait visuals with a clean, direct look.</p>
+        </div>
+      </article>
+    </section>
+  </main>
 
-  <div class="media-grid">
-    <!-- Add videos here later -->
-  </div>
-</div>
-
-<audio id="keySound" src="piano.mp3"></audio>
-<script src="script.js"></script>
-
+  <footer class="footer">2026 OFFKEY MEDIA Productions - Capturing Moments in Motion</footer>
+  <audio id="keySound" src="piano.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>

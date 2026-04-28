@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | OFFKEY MEDIA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site-page">
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-link" onclick="go('index.html', event)">Home - Back to Piano</button>
+      <h1 class="page-title">Home</h1>
+      <span></span>
+    </div>
+  </header>
 
-<div class="mini-nav">
-  <div onclick="go('why.html')">Why</div>
-  <div onclick="go('media.html')">Media</div>
-  <div onclick="go('index.html')">Home</div>
-  <div onclick="go('pricing.html')">Pricing</div>
-  <div onclick="go('booking.html')">Booking</div>
-  <div onclick="go('productions.html')">Productions</div>
-</div>
+  <main class="page-main">
+    <section class="hero">
+      <img src="flostanding.jpg" alt="Flo standing for Offkey Media">
+      <div class="hero-content">
+        <h2>Every Moment <span class="accent">Worth Keeping</span></h2>
+        <p>Professional videography and photography for events, productions, artists, brands, and memories that deserve the right eye.</p>
+        <a class="button" href="booking.html">Book a Session</a>
+      </div>
+    </section>
 
-<div class="container">
-  <h1 class="fade-up">Welcome 🎹</h1>
-  <p class="fade-up">Select a key to explore.</p>
-</div>
+    <section class="card-grid">
+      <article class="card">
+        <h3>Events</h3>
+        <p>Parties, weddings, concerts, pop-ups, corporate gatherings, and private moments captured with clean cinematic coverage.</p>
+      </article>
+      <article class="card">
+        <h3>Videos</h3>
+        <p>Music videos, social promos, recap edits, interviews, and creative visuals built around your story and your energy.</p>
+      </article>
+      <article class="card">
+        <h3>Photography</h3>
+        <p>Portraits, lifestyle shoots, event stills, behind-the-scenes moments, and brand images with a polished finish.</p>
+      </article>
+    </section>
 
-<audio id="keySound" src="piano.mp3"></audio>
-<script src="script.js"></script>
+    <section class="cta">
+      <h3>Ready to create something beautiful?</h3>
+      <p>Reach out and let us plan your next shoot.</p>
+      <a class="button secondary" href="booking.html">Get in Touch</a>
+    </section>
+  </main>
 
+  <footer class="footer">2026 OFFKEY MEDIA Productions - Capturing Moments in Motion</footer>
+  <audio id="keySound" src="piano.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,32 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pricing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | OFFKEY MEDIA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="page-bg" style="background-image: url('pricing-bg.jpg');"></div>
-<div class="page-overlay"></div>
+<body class="site-page">
+  <header class="page-header">
+    <div class="header-inner">
+      <button class="back-link" onclick="go('index.html', event)">Home - Back to Piano</button>
+      <h1 class="page-title">Pricing</h1>
+      <span></span>
+    </div>
+  </header>
 
-<div class="mini-nav">
-  <div onclick="go('why.html')">Why</div>
-  <div onclick="go('media.html')">Media</div>
-  <div onclick="go('index.html')">Home</div>
-  <div onclick="go('pricing.html')">Pricing</div>
-  <div onclick="go('booking.html')">Booking</div>
-  <div onclick="go('productions.html')">Productions</div>
-</div>
+  <main class="page-main">
+    <section class="intro">
+      <h2>Transparent <span class="accent">Packages</span></h2>
+      <p>Every project is different. Start here, then we can tailor the quote to the event, location, time, and final deliverables.</p>
+    </section>
 
-<div class="container">
-  <h1 class="fade-up">Pricing 💰</h1>
+    <section class="pricing-grid">
+      <article class="price-card">
+        <h3>Essential</h3>
+        <p>Perfect for small events and portrait sessions.</p>
+        <div class="price">$499</div>
+        <ul class="feature-list">
+          <li>Up to 3 hours of coverage</li>
+          <li>50+ edited photos</li>
+          <li>One shooter</li>
+          <li>Online gallery delivery</li>
+          <li>7-day turnaround</li>
+        </ul>
+        <a class="button" href="booking.html">Choose Essential</a>
+      </article>
 
-  <p>Basic — $100</p>
-  <p>Events — $250</p>
-  <p>Full Production — $500+</p>
-</div>
+      <article class="price-card featured">
+        <span class="badge">Most Popular</span>
+        <h3>Signature</h3>
+        <p>Ideal for weddings, parties, concerts, and brand shoots.</p>
+        <div class="price">$1,299</div>
+        <ul class="feature-list">
+          <li>Up to 8 hours of coverage</li>
+          <li>200+ edited photos</li>
+          <li>3-minute highlight film</li>
+          <li>Photo and video coverage</li>
+          <li>4K video delivery</li>
+        </ul>
+        <a class="button" href="booking.html">Choose Signature</a>
+      </article>
 
-<audio id="keySound" src="piano.mp3"></audio>
-<script src="script.js"></script>
+      <article class="price-card">
+        <h3>Production</h3>
+        <p>Built for music videos, promos, and bigger creative ideas.</p>
+        <div class="price">$2,999+</div>
+        <ul class="feature-list">
+          <li>Full photo and video package</li>
+          <li>Cinematic feature edit</li>
+          <li>Multi-camera setup</li>
+          <li>Lighting and audio planning</li>
+          <li>Priority delivery</li>
+        </ul>
+        <a class="button" href="booking.html">Choose Production</a>
+      </article>
+    </section>
 
+    <section class="cta">
+      <p>Need something custom? <span class="accent">Ask on the booking page.</span></p>
+    </section>
+  </main>
+
+  <footer class="footer">2026 OFFKEY MEDIA Productions - Capturing Moments in Motion</footer>
+  <audio id="keySound" src="piano.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>

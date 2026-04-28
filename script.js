@@ -1,25 +1,42 @@
-function go(page) {
+function go(page, event) {
   const sound = document.getElementById("keySound");
+  const key = event && event.currentTarget ? event.currentTarget : null;
+
+  if (key && key.classList) {
+    key.classList.add("is-pressed");
+  }
 
   if (sound) {
     sound.currentTime = 0;
-    sound.play();
+    sound.play().catch(() => {});
   }
 
   setTimeout(() => {
     window.location.href = page;
-  }, 300);
+  }, 200);
 }
 
-// 🎬 SCROLL REVEAL (FOR EVERYTHING)
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
+function submitBooking(event) {
+  event.preventDefault();
 
-document.querySelectorAll(".fade-up, .why-image-side img").forEach(el => {
-  observer.observe(el);
-});
+  const form = event.currentTarget;
+  const name = form.querySelector("#name").value.trim() || "friend";
+  const email = form.querySelector("#email").value.trim();
+  const success = document.querySelector(".success");
+  const formWrap = document.querySelector(".booking-form");
+
+  document.querySelector("#successName").textContent = name;
+  document.querySelector("#successEmail").textContent = email;
+  formWrap.style.display = "none";
+  success.classList.add("show");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function resetBooking() {
+  const form = document.querySelector(".booking-form");
+  const success = document.querySelector(".success");
+
+  form.reset();
+  form.style.display = "block";
+  success.classList.remove("show");
+}
