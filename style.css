@@ -684,41 +684,190 @@ textarea:focus {
 }
 
 @media (max-width: 720px) {
+  body {
+    background:
+      radial-gradient(ellipse at top, rgba(212, 175, 55, 0.08), transparent 46%),
+      linear-gradient(180deg, #101010 0%, #020202 52%, #111 100%);
+  }
+
   .landing {
     align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100svh;
+    padding: 22px 10px 18px;
+  }
+
+  .title {
+    margin-bottom: 22px;
+  }
+
+  .title h1 {
+    font-size: clamp(34px, 11vw, 48px);
+    letter-spacing: 2px;
+  }
+
+  .title p {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
   }
 
   .piano-wrap {
-    overflow-x: auto;
-    padding-bottom: 12px;
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .piano-top,
   .piano {
-    min-width: 640px;
+    min-width: 0;
+  }
+
+  .piano-top {
+    height: 16px;
+  }
+
+  .piano {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2px;
+    padding: 7px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .key {
+    height: min(58vh, 360px);
+    min-height: 300px;
+    padding: 0 3px 18px;
+    border-radius: 0 0 7px 7px;
+  }
+
+  .key-label {
+    font-size: clamp(9px, 2.6vw, 12px);
+    letter-spacing: 0.08em;
+  }
+
+  .black-key {
+    top: 7px;
+    width: 28px;
+    height: min(34vh, 190px);
+  }
+
+  .black-key.one {
+    left: calc((100% - 14px) / 6 * 1 - 8px);
+  }
+
+  .black-key.two {
+    left: calc((100% - 14px) / 6 * 3 - 8px);
+  }
+
+  .black-key.three {
+    left: calc((100% - 14px) / 6 * 4 - 8px);
+  }
+
+  .tagline {
+    margin-top: 20px;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.12em;
+  }
+
+  .page-header {
+    position: static;
   }
 
   .header-inner {
-    min-height: 112px;
+    width: min(100% - 18px, 1180px);
+    min-height: 88px;
     grid-template-columns: 1fr;
     justify-items: center;
-    padding: 14px 0;
+    gap: 8px;
+    padding: 10px 0;
   }
 
   .site-mark {
     justify-self: center;
+    font-size: 14px;
+    letter-spacing: 0.12em;
   }
 
   .mini-piano {
     justify-self: stretch;
     width: 100%;
-    overflow-x: auto;
-    grid-template-columns: repeat(6, minmax(86px, 1fr));
+    overflow: visible;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2px;
+    padding: 6px;
+    border-radius: 0 0 9px 9px;
   }
 
   .mini-key {
-    min-height: 50px;
-    font-size: 10px;
+    min-height: 42px;
+    padding: 0 2px 7px;
+    font-size: clamp(7px, 2.1vw, 9px);
+    letter-spacing: 0.02em;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .mini-black-key {
+    top: 6px;
+    width: 20px;
+    height: 31px;
+  }
+
+  .mini-black-key.one {
+    left: calc((100% - 12px) / 6 * 1 - 4px);
+  }
+
+  .mini-black-key.two {
+    left: calc((100% - 12px) / 6 * 3 - 4px);
+  }
+
+  .mini-black-key.three {
+    left: calc((100% - 12px) / 6 * 4 - 4px);
+  }
+
+  .page-main {
+    width: min(100% - 24px, 1180px);
+    padding: 28px 0 42px;
+  }
+
+  .intro {
+    margin-bottom: 28px;
+  }
+
+  .hero h2,
+  .intro h2 {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .hero p,
+  .intro p {
+    font-size: 16px;
+    line-height: 1.48;
+    margin-bottom: 20px;
+  }
+
+  .card-grid,
+  .pricing-grid,
+  .media-grid {
+    gap: 14px;
+  }
+
+  .card,
+  .price-card,
+  .booking-form {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .card h3,
+  .price-card h3 {
+    font-size: 23px;
+  }
+
+  .price {
+    margin: 14px 0;
+    font-size: 36px;
   }
 
   .form-row {
@@ -727,10 +876,40 @@ textarea:focus {
   }
 
   .hero {
-    min-height: 540px;
+    min-height: 430px;
+    margin-bottom: 28px;
+    border-radius: 12px;
+  }
+
+  .hero-content {
+    padding: 34px 18px;
+  }
+
+  .media-item img {
+    max-height: 520px;
+  }
+
+  .cta {
+    margin-top: 34px;
+    padding-top: 30px;
+  }
+
+  .process {
+    min-height: 310px;
+    margin-top: 34px;
+    border-radius: 12px;
   }
 
   .process-content {
-    padding: 32px 22px;
+    padding: 30px 20px;
+  }
+
+  .process-content h3 {
+    font-size: 30px;
+  }
+
+  .footer {
+    padding: 22px 14px;
+    font-size: 12px;
   }
 }
