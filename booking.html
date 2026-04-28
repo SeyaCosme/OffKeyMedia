@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-bg" style="background-image: url('booking-bg.jpg');"></div>
+<div class="page-overlay"></div>
 
 <div class="mini-nav">
   <div onclick="go('why.html')">Why</div>
@@ -18,14 +20,19 @@
 <div class="container">
   <h1 class="fade-up">Book a Session 🎥</h1>
 
-  <input type="text" placeholder="Name"><br>
-  <input type="email" placeholder="Email"><br>
-  <input type="date"><br>
-  <textarea placeholder="Details"></textarea><br><br>
+  <!-- 🔥 FORM -->
+  <form action="https://formspree.io/f/mrerwlkv" method="POST">
+    
+    <!-- redirect after submit -->
+    <input type="hidden" name="_next" value="https://cash.app/$Offkeymedia">
 
-  <a href="https://cash.app/$YourCashtag">
-    <button>Pay & Book</button>
-  </a>
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="date" name="date" required><br>
+    <textarea name="details" placeholder="Details"></textarea><br>
+
+    <button type="submit">Request Booking & Pay</button>
+  </form>
 </div>
 
 <audio id="keySound" src="piano.mp3"></audio>
