@@ -4,14 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media | OFFKEY MEDIA</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="site-page">
   <header class="page-header">
     <div class="header-inner">
-      <button class="back-link" onclick="go('index.html', event)">Home - Back to Piano</button>
+      <button class="site-mark" onclick="go('index.html', event)">OFFKEY MEDIA</button>
       <h1 class="page-title">Media</h1>
-      <span></span>
+      <nav class="mini-piano" aria-label="Page navigation">
+        <a class="mini-key" href="why.html" onclick="go('why.html', event)">Why</a>
+        <a class="mini-key active" href="media.html" onclick="go('media.html', event)">Media</a>
+        <a class="mini-key red" href="home.html" onclick="go('home.html', event)">Home</a>
+        <a class="mini-key" href="pricing.html" onclick="go('pricing.html', event)">Pricing</a>
+        <a class="mini-key" href="booking.html" onclick="go('booking.html', event)">Booking</a>
+        <a class="mini-key" href="productions.html" onclick="go('productions.html', event)">Productions</a>
+        <span class="mini-black-key one" aria-hidden="true"></span>
+        <span class="mini-black-key two" aria-hidden="true"></span>
+        <span class="mini-black-key three" aria-hidden="true"></span>
+      </nav>
     </div>
   </header>
 

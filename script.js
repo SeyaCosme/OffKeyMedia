@@ -1,4 +1,8 @@
 function go(page, event) {
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
+
   const sound = document.getElementById("keySound");
   const key = event && event.currentTarget ? event.currentTarget : null;
 
