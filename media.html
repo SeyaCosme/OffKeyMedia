@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media | OFF-KEY MEDIA</title>
+  <title>Experiences | OFF-KEY MEDIA</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,10 +11,10 @@
   <header class="page-header">
     <div class="header-inner">
       <button class="site-mark" onclick="go('index.html', event)">OFF-<span class="brand-key">KEY</span> MEDIA</button>
-      <h1 class="page-title">Media</h1>
+      <h1 class="page-title">Experiences</h1>
       <nav class="mini-piano" aria-label="Page navigation">
         <a class="mini-key" href="why.html" onclick="go('why.html', event)">Why</a>
-        <a class="mini-key active" href="media.html" onclick="go('media.html', event)">Media</a>
+        <a class="mini-key active" href="media.html" onclick="go('media.html', event)">Experiences</a>
         <a class="mini-key red" href="home.html" onclick="go('home.html', event)">Home</a>
         <a class="mini-key" href="pricing.html" onclick="go('pricing.html', event)">Pricing</a>
         <a class="mini-key" href="booking.html" onclick="go('booking.html', event)">Booking</a>
@@ -26,36 +26,56 @@
     </div>
   </header>
 
-  <main class="media-stage">
-    <section class="media-hero-panel" aria-live="polite">
-      <div class="media-screen is-film" id="mediaScreen">
-        <img id="mediaPhoto" src="floandhiscam.jpg" alt="Off-Key Media preview">
-        <div class="screen-grain"></div>
-        <div class="screen-copy">
-          <p id="mediaType">Films</p>
-          <h2 id="mediaTitle">OFF-<span class="brand-key">KEY</span> MEDIA</h2>
-          <span id="mediaDescription">Narrative pieces, trailers, and cinematic ideas in motion.</span>
-        </div>
-      </div>
+  <main class="page-main minimal-page">
+    <section class="minimal-intro">
+      <p class="eyebrow">Experiences</p>
+      <h2>Embedded moments. <span class="mission-red">Real culture.</span></h2>
+      <p>Events, premieres, performances, and small pieces that give just enough to make you want to see more.</p>
+    </section>
 
-      <div class="media-orbits" aria-label="Media categories">
-        <button class="media-bubble active" data-media="film" type="button">
-          <span class="bubble-motion"></span>
-          <strong>Films</strong>
-        </button>
-        <button class="media-bubble" data-media="events" type="button">
-          <span class="bubble-motion"></span>
-          <strong>Events</strong>
-        </button>
-        <button class="media-bubble" data-media="photos" type="button">
-          <span class="bubble-photo"></span>
-          <strong>Photos</strong>
-        </button>
-      </div>
+    <section class="experience-list">
+      <article class="experience-item">
+        <div class="experience-video">
+          <video src="mfa-wile-out.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="experience-copy">
+          <h3>MFA <span class="mission-red">"Wile Out"</span> Competition</h3>
+          <p>Comedians. <span>Laughter.</span> Whole lot of <span>Culture.</span></p>
+        </div>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-video">
+          <video src="she-likes-to-watch-premiere.mp4" autoplay muted loop playsinline controls></video>
+        </div>
+        <div class="experience-copy">
+          <h3>"She Likes To Watch" <span class="mission-red">Movie</span> Premiere</h3>
+          <p><span>Red</span> Carpet. <span>All Access.</span> Who ain't on the <span>list?</span></p>
+        </div>
+      </article>
+
+      <article class="experience-item">
+        <div class="experience-video image-preview">
+          <img src="flo-cutout.png" alt="Flo and his camera artwork">
+          <span>Smokin' Word Video Coming Soon</span>
+        </div>
+        <div class="experience-copy">
+          <h3><span class="mission-red">Smokin'</span> Word</h3>
+          <p>Puff. Puff. <span>Poetry.</span></p>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="footer">2026 OFF-<span class="brand-key">KEY</span> MEDIA Productions - Capturing Moments in Motion</footer>
+  <footer class="footer">
+    <div class="social-circles" aria-label="Social media links">
+      <a href="https://www.facebook.com/jeremy.f.lawrence" target="_blank" rel="noopener">FB</a>
+      <a href="https://www.instagram.com/Whoisj_flo" target="_blank" rel="noopener">IG</a>
+      <a href="https://www.instagram.com/offkeymediafilms/" target="_blank" rel="noopener">OK</a>
+    </div>
+    <p>OFF-<span class="brand-key">KEY</span> MEDIA - WE HIT <span class="mission-red">DIFFERENT</span></p>
+  </footer>
+
   <audio id="keySound" src="piano.mp3"></audio>
   <script src="script.js"></script>
 </body>
