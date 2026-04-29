@@ -105,3 +105,20 @@ if (document.querySelector("#mediaScreen")) {
     setMediaSlide(order[index]);
   }, 6500);
 }
+
+document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach((iframe) => {
+  iframe.addEventListener("load", () => {
+    iframe.contentWindow?.postMessage(
+      JSON.stringify({ event: "command", func: "mute", args: [] }),
+      "*"
+    );
+    iframe.contentWindow?.postMessage(
+      JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+      "*"
+    );
+  });
+});
+
+document.querySelectorAll('iframe[src*="drive.google.com"]').forEach((iframe) => {
+  iframe.setAttribute("allow", "fullscreen");
+});
