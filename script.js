@@ -44,3 +44,64 @@ function resetBooking() {
   form.style.display = "block";
   success.classList.remove("show");
 }
+
+const mediaSlides = {
+  film: {
+    type: "Films",
+    title: 'OFF-<span class="brand-key">KEY</span> MEDIA',
+    description: "Narrative pieces, trailers, and cinematic ideas in motion.",
+    image: "floandhiscam.jpg",
+    className: "is-film",
+  },
+  events: {
+    type: "Events",
+    title: "Crowds. Rooms. Moments.",
+    description: "Event coverage that feels alive without showing too much too soon.",
+    image: "flostanding.jpg",
+    className: "is-events",
+  },
+  photos: {
+    type: "Photos",
+    title: "Still Frames",
+    description: "Portraits, posters, and images that move like memory.",
+    image: "floandhiscam.jpg",
+    className: "is-photos",
+  },
+};
+
+function setMediaSlide(name) {
+  const slide = mediaSlides[name];
+  const screen = document.querySelector("#mediaScreen");
+  const photo = document.querySelector("#mediaPhoto");
+  const type = document.querySelector("#mediaType");
+  const title = document.querySelector("#mediaTitle");
+  const description = document.querySelector("#mediaDescription");
+
+  if (!slide || !screen || !photo || !type || !title || !description) return;
+
+  document.querySelectorAll(".media-bubble").forEach((button) => {
+    button.classList.toggle("active", button.dataset.media === name);
+  });
+
+  screen.className = `media-screen ${slide.className}`;
+  photo.src = slide.image;
+  type.textContent = slide.type;
+  title.innerHTML = slide.title;
+  description.textContent = slide.description;
+}
+
+document.querySelectorAll(".media-bubble").forEach((button) => {
+  button.addEventListener("click", () => setMediaSlide(button.dataset.media));
+});
+
+if (document.querySelector("#mediaScreen")) {
+  const order = ["film", "events", "photos"];
+  let index = 0;
+
+  setInterval(() => {
+    const active = document.querySelector(".media-bubble.active");
+    index = active ? order.indexOf(active.dataset.media) : index;
+    index = (index + 1) % order.length;
+    setMediaSlide(order[index]);
+  }, 6500);
+}

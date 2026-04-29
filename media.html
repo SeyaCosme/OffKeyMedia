@@ -26,27 +26,32 @@
     </div>
   </header>
 
-  <main class="page-main">
-    <section class="intro">
-      <h2>Visuals With <span class="accent">Presence</span></h2>
-      <p>A quick look at the OFF-<span class="brand-key">KEY</span> MEDIA style: portraits, creative direction, behind-the-scenes moments, and clean image work.</p>
-    </section>
+  <main class="media-stage">
+    <section class="media-hero-panel" aria-live="polite">
+      <div class="media-screen is-film" id="mediaScreen">
+        <img id="mediaPhoto" src="floandhiscam.jpg" alt="Off-Key Media preview">
+        <div class="screen-grain"></div>
+        <div class="screen-copy">
+          <p id="mediaType">Films</p>
+          <h2 id="mediaTitle">OFF-<span class="brand-key">KEY</span> MEDIA</h2>
+          <span id="mediaDescription">Narrative pieces, trailers, and cinematic ideas in motion.</span>
+        </div>
+      </div>
 
-    <section class="media-grid">
-      <article class="media-item tall">
-        <img src="floandhiscam.jpg" alt="Flo and his camera artwork">
-        <div class="media-caption">
-          <h3>Flo and His Cam</h3>
-          <p>Artwork and brand identity for OFF-<span class="brand-key">KEY</span> MEDIA.</p>
-        </div>
-      </article>
-      <article class="media-item tall">
-        <img src="flostanding.jpg" alt="Flo standing portrait">
-        <div class="media-caption">
-          <h3>Portrait Work</h3>
-          <p>Studio-style portrait visuals with a clean, direct look.</p>
-        </div>
-      </article>
+      <div class="media-orbits" aria-label="Media categories">
+        <button class="media-bubble active" data-media="film" type="button">
+          <span class="bubble-motion"></span>
+          <strong>Films</strong>
+        </button>
+        <button class="media-bubble" data-media="events" type="button">
+          <span class="bubble-motion"></span>
+          <strong>Events</strong>
+        </button>
+        <button class="media-bubble" data-media="photos" type="button">
+          <span class="bubble-photo"></span>
+          <strong>Photos</strong>
+        </button>
+      </div>
     </section>
   </main>
 
