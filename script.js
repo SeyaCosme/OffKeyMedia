@@ -26,14 +26,33 @@ function submitBooking(event) {
   const form = event.currentTarget;
   const name = form.querySelector("#name").value.trim() || "friend";
   const email = form.querySelector("#email").value.trim();
+  const phone = form.querySelector("#phone").value.trim();
+  const eventDate = form.querySelector("#eventDate").value;
+  const eventType = form.querySelector("#eventType").value.trim();
+  const details = form.querySelector("#details").value.trim();
+  const bookingRecipient = "offkeymediafilms@gmail.com";
   const success = document.querySelector(".success");
   const formWrap = document.querySelector(".booking-form");
+  const subject = encodeURIComponent(`Booking Request from ${name}`);
+  const body = encodeURIComponent(
+    `New OFF-KEY MEDIA booking request\n\n` +
+    `Name: ${name}\n` +
+    `Email: ${email}\n` +
+    `Phone: ${phone || "Not provided"}\n` +
+    `Event Date: ${eventDate}\n` +
+    `Event / Shoot Type: ${eventType}\n\n` +
+    `Project Details:\n${details}`
+  );
 
   document.querySelector("#successName").textContent = name;
   document.querySelector("#successEmail").textContent = email;
   formWrap.style.display = "none";
   success.classList.add("show");
   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (!bookingRecipient.includes("REPLACE_WITH_HIS_EMAIL")) {
+    window.location.href = `mailto:${bookingRecipient}?subject=${subject}&body=${body}`;
+  }
 }
 
 function resetBooking() {
