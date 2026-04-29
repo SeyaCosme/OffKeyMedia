@@ -807,6 +807,48 @@ img {
   border: 0;
 }
 
+.video-thumb {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.56)),
+    var(--thumb) center / contain no-repeat,
+    #050505;
+}
+
+.video-thumb iframe {
+  opacity: 0.02;
+}
+
+.video-thumb:focus-within iframe,
+.video-thumb:hover iframe {
+  opacity: 1;
+}
+
+.play-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 74px;
+  height: 74px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.video-thumb:hover .play-overlay,
+.video-thumb:focus-within .play-overlay {
+  opacity: 0;
+}
+
 .image-preview img {
   position: absolute;
   inset: 0;
@@ -1640,12 +1682,24 @@ textarea:focus {
 
   .stills-board {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 8px;
   }
 
   .poster-slot {
     grid-column: 1 / -1;
     grid-row: auto;
-    min-height: 230px;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .still-slot {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .image-slot img {
+    object-fit: cover;
   }
 
   .media-stage {
