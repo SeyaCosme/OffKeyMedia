@@ -20,7 +20,7 @@ function go(page, event) {
   }, 200);
 }
 
-function submitBooking(event) {
+async function submitBooking(event) {
   event.preventDefault();
 
   const form = event.currentTarget;
@@ -30,28 +30,49 @@ function submitBooking(event) {
   const eventDate = form.querySelector("#eventDate").value;
   const eventType = form.querySelector("#eventType").value.trim();
   const details = form.querySelector("#details").value.trim();
-  const bookingRecipient = "offkeymediafilms@gmail.com";
+  const formspreeEndpoint = "https://formspree.io/f/mrerwlkv";
   const success = document.querySelector(".success");
+  const error = document.querySelector("#bookingError");
   const formWrap = document.querySelector(".booking-form");
-  const subject = encodeURIComponent(`Booking Request from ${name}`);
-  const body = encodeURIComponent(
-    `New OFF-KEY MEDIA booking request\n\n` +
-    `Name: ${name}\n` +
-    `Email: ${email}\n` +
-    `Phone: ${phone || "Not provided"}\n` +
-    `Event Date: ${eventDate}\n` +
-    `Event / Shoot Type: ${eventType}\n\n` +
-    `Project Details:\n${details}`
-  );
+  const submitButton = document.querySelector("#bookingSubmit");
 
-  document.querySelector("#successName").textContent = name;
-  document.querySelector("#successEmail").textContent = email;
-  formWrap.style.display = "none";
-  success.classList.add("show");
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (formspreeEndpoint.includes("REPLACE_WITH_FORMSPREE_ENDPOINT")) {
+    alert("Formspree is not connected yet. Add the Formspree endpoint in script.js.");
+    return;
+  }
 
-  if (!bookingRecipient.includes("REPLACE_WITH_HIS_EMAIL")) {
-    window.location.href = `mailto:${bookingRecipient}?subject=${subject}&body=${body}`;
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+
+  const formData = new FormData(form);
+  formData.append("_subject", `Booking Request from ${name}`);
+  formData.append("message", details);
+
+  try {
+    const response = await fetch(formspreeEndpoint, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
+    if (!response.ok) {
+      throw new Error("Formspree request failed");
+    }
+
+    document.querySelector("#successName").textContent = name;
+    document.querySelector("#successEmail").textContent = email;
+    formWrap.style.display = "none";
+    error.classList.remove("show");
+    success.classList.add("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } catch (err) {
+    formWrap.style.display = "none";
+    success.classList.remove("show");
+    error.classList.add("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Booking Request";
   }
 }
 
@@ -61,7 +82,8 @@ function resetBooking() {
 
   form.reset();
   form.style.display = "block";
-  success.classList.remove("show");
+  success?.classList.remove("show");
+  document.querySelector("#bookingError")?.classList.remove("show");
 }
 
 const mediaSlides = {

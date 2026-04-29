@@ -35,8 +35,15 @@
     <section class="success">
       <h2>Request Received</h2>
       <p>Thank you, <span id="successName" class="accent">friend</span>.</p>
+      <p>Thank you. OFF-<span class="brand-key">KEY</span> MEDIA received your booking request.</p>
       <p>We will get back to you at <span id="successEmail"></span>.</p>
       <button class="button" onclick="resetBooking()">Submit Another Request</button>
+    </section>
+
+    <section class="success error" id="bookingError">
+      <h2>Something Went Wrong</h2>
+      <p>The booking request did not send. Please try again in a moment.</p>
+      <button class="button" onclick="resetBooking()">Back to Form</button>
     </section>
 
     <form class="booking-form" onsubmit="submitBooking(event)">
@@ -72,7 +79,7 @@
         <textarea id="details" name="details" required placeholder="Tell us about your vision, location, timing, and anything else we should know..."></textarea>
       </div>
 
-      <button class="button" type="submit">Send Booking Request</button>
+      <button class="button" type="submit" id="bookingSubmit">Send Booking Request</button>
     </form>
   </main>
 
